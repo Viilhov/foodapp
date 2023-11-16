@@ -8,17 +8,17 @@ import FoodDetails from "./components/FoodDetails";
 import "./App.css";
 function App() {
   const [foodData, setFoodData] = useState([]);
+  const [foodId, setFoodId] = useState("622598");
   return (
     <div className="App">
       <Nav />
       <Search foodData={foodData} setFoodData={setFoodData} />
       <Container>
         <InnerContainer>
-          <FoodList foodData={foodData} />
+          <FoodList setFoodId={setFoodId} foodData={foodData} />
         </InnerContainer>
-
         <InnerContainer>
-          <FoodDetails />
+          <FoodDetails foodId={foodId} />
         </InnerContainer>
       </Container>
     </div>
